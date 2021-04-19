@@ -1,0 +1,11 @@
+.player {
+  width: 100%;
+  margin: 0 auto;
+  &__wrapper{
+    background: rgb(139, 137, 137);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
