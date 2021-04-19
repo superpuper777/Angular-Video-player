@@ -1,23 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input, Output, EventEmitter  } from '@angular/core';
 
 @Component({
   selector: 'app-play-pause',
   templateUrl: './play-pause.component.html',
-  styleUrls: ['./play-pause.component.scss']
+  styleUrls: ['../../app.component.scss']
 })
 export class PlayPauseComponent implements OnInit {
-  state;
+  @Input() playpause: string;
+  @Output() onToggledVideo = new EventEmitter();
+  
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  play() {
-    console.log("play");
+  toggleVideo() {
+    this.onToggledVideo.emit();
   }
-
-  pause() {
-    console.log("pause");
-  }
-
 }

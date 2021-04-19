@@ -1,7 +1,28 @@
 <section class="player">
-  <div class="player__wrapper">
-    <div class="player__wrapper__controls">
-      <app-play-pause></app-play-pause>
+  <section
+    class="player__video"
+    data-aos="fade-up"
+    data-aos-duration="500"
+    data-aos-offset="200"
+  >
+    <div class="player__video__wrapper">
+      <div class="player__video__wrapper__item"></div>
+      <video
+        class="player__video__element"
+        width="640"
+        height="365"
+        #videoplayer
+        src="//storage.googleapis.com/media-session/caminandes/short.mp4#t=80"
+      ></video>
     </div>
-  </div>
+  </section>
+  <mat-toolbar class="player__controls" color="primary">
+    <app-play-pause
+      [playpause]="currentPlaypause"
+      (onToggledVideo)="onToggledVideo()"
+    ></app-play-pause>
+    <app-timeline></app-timeline>
+    <!-- (onSliderChangeEnd)="onSliderChangeEnd($event)" -->
+    <app-stop (onStopVideo)="onStopVideo()"></app-stop>
+  </mat-toolbar>
 </section>
