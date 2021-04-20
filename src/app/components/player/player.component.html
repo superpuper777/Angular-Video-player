@@ -21,8 +21,9 @@
       [playpause]="currentPlaypause"
       (onToggledVideo)="onToggledVideo()"
     ></app-play-pause>
-    <app-timeline></app-timeline>
-    <!-- (onSliderChangeEnd)="onSliderChangeEnd($event)" -->
+    <app-timeline
+      (onSliderChangeEnd)="onSliderChangeEnd($event)"
+    ></app-timeline>
     <app-stop (onStopVideo)="onStopVideo()"></app-stop>
   </mat-toolbar>
 </section>

@@ -22,11 +22,11 @@ export class PlayerComponent implements OnInit {
 
   onToggledVideo() {
     if ( this.video.paused ) {
-      this.video.play();
+      this.videoService.play(this.video);
       this.currentPlaypause = 'pause';
     }
     else{
-      this.video.pause();
+      this.videoService.pause(this.video);
       this.currentPlaypause = 'play';
     }
   }
@@ -35,7 +35,7 @@ export class PlayerComponent implements OnInit {
     this.videoService.stop(this.video);
   }
 
-  // onSliderChangeEnd(change) {
-    
-  // }
+  onSliderChangeEnd(change) {
+    this.videoService.seekTo(change, this.video);
+  }
 }
