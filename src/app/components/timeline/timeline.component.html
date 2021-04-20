@@ -2,5 +2,8 @@
   class="player__controls__time-slider"
   min="0"
   step="1"
+  [max]="state?.duration"
+  [value]="state?.currentTime"
   (input)="sliderChangeEnd($event)"
+  [disabled]="state?.error"
 ></mat-slider>

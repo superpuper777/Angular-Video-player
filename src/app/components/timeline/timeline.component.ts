@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { PlayerState } from './../../interfaces/player-state';
 
 @Component({
   selector: 'app-timeline',
@@ -7,10 +8,11 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class TimelineComponent implements OnInit {
   @Output() onSliderChangeEnd = new EventEmitter();
-
+  state: PlayerState;
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.state?.currentTime);
   }
 
   sliderChangeEnd(change) {
